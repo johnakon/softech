@@ -1,5 +1,5 @@
 # softech
-IMagine we are building an e-commerce website.. that has sales in it.. inventory.. ist of items someone can pick from.. processing payment.. delivery of these items
+Imagine we are building an e-commerce website.. that has sales in it.. inventory.. ist of items someone can pick from.. processing payment.. delivery of these items
 
 scope
 - assume we only deal in laptops
