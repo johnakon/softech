@@ -21,7 +21,6 @@ Aims:
 - lets try to model the data 
 
 Work:
-shall have 4 classes
 1) have an entry point index.js
 2) test file
 3) 3 folders (models[put those classes inside], test, common, utils.js(some general functions to cut across the app. lets have a function print))
