@@ -3,7 +3,7 @@ const laptop = require('../models/laptop')
 // console.log(require('../index.js'))
 let myLaptop = require('../index.js')
 
-//instatiating
+// instatiating
 
 
 test('test string version of the object', () => {
