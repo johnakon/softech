@@ -1,46 +1,40 @@
-class Laptop{
-    constructor(lapHddSize, lapRam, lapCpuSpeed, lapBatteryLife, lapScreenSize, lapModel, lapMake, lapPrice, lapOs, lapSerialNum, lapDateOfMake){
-        this.hddSize = lapHddSize;
-        this.ram = lapRam;
-        this.cpuSpeed = lapCpuSpeed;
-        this.batteryLife = lapBatteryLife;
-        this.screenSize = lapScreenSize;
-        this.lapModel = lapModel
-        this.make = lapMake;
-        this.price = lapPrice;
-        this.os = lapOs;
-        this.serialNum = lapSerialNum
-        this.dom = lapDateOfMake
+class Laptop {
+    constructor(brand, HDD, RAM, price, manufactureYear) {
+      this.brand = brand;
+      this.HDD = HDD;
+      this.RAM = RAM;
+      this.price = price;
+      this.manufactureYear = manufactureYear;
+      this.currentYear = new Date().getFullYear();
     }
-
-    //adding a method to return the printed string
-    // compose a 
-    printableString(){
-        return `lap properties hddSize: ${this.hddSize} \n RAM size: ${this.ram} \n CPUSpeed: ${this.cpuSpeed} \n BatteryLife: ${this.batteryLife} \n ScreenSSize: ${this.screenSize} \n Laptop mdel: ${this.lapModel} \n Laptop amnufucturer: ${this.make} \n Laptop price: ${this.price} \n Laptop OS: ${this.os} \n Laptop serial num: ${this.serialNum} \n Date of maufuctury: ${this.dom}:`
+    checkBrand() {
+      if (typeof this.brand == 'string') {
+        return true;
+      } else {
+        return 'wrong input';
+      }
     }
-    checkRam(){
-        if(typeof this.ram == "number"){
-            return true;
-        }else{
-            return false;
-        }
+  
+    laptopAge() {
+      return this.currentYear - this.manufactureYear;
     }
-    //other methods
-    //
-    laptopAge(){
-        var currentDate = new Date()
-        var currentYear = currentDate.getFullYear()
-        return `${currentYear} - ${this.dom.getFullYear()}`
+  
+    adjPrice() {
+      const discount = this.price * 0.3;
+      if (this.laptopAge() > 3) {
+        return this.price - discount;
+      } else {
+        return this.price;
+      }
     }
-
-    adjustPrice(){
-       var currentLapTopAge = this.laptopAge()
-    //    var discount = 0;
-       if(currentLapTopAge > 3){
-           var discount = (this.price * 0.3)
-       }
-       return `${this.price} - ${discount}`
+  
+    printableString() {
+      return `Laptop Specification: \n {Name:${this.brand}\n RAM: ${this.RAM} \n HDD: ${this.HDD}\n Price: ${this.price}\n Date of Manufacture: ${this.manufactureYear}}`;
     }
-}
-
-module.exports = Laptop
+  
+    getDescription() {
+      return `${this.brand} RAM: ${this.RAM} HDD: ${this.HDD}`;
+    }
+  }
+  
+  module.exports = Laptop;
